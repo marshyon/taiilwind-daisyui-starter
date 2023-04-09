@@ -146,6 +146,26 @@ function App() {
         </div>
       </div>
 
+      { /* TOGGLE */}
+
+      <div className="flex justify-center pt-10">
+        <div className="form-control">
+          <label className="label cursor-pointer">
+            <span className="label-text pr-2">Remember me</span>
+            <input type="checkbox" className="toggle" checked />
+          </label>
+        </div>
+      </div>
+
+      <div className="flex justify-center pb-10">
+        <div className="form-control">
+          <label className="label cursor-pointer">
+            <span className="label-text pr-2">Remember me</span>
+            <input type="checkbox" className="toggle" />
+          </label>
+        </div>
+      </div>
+
       {/* CAROUSEL */}
 
       <div class="w-[40rem] mx-auto px-4 hidden md:block">
