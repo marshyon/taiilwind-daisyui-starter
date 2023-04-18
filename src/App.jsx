@@ -1,12 +1,23 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
 
 
 function App() {
+  const modalToggleRef = useRef(null);
   const [count, setCount] = useState(0)
   const [checked, setChecked] = useState(false)
+  const [modal, setModal] = useState(false)
+
+  const toggleModal = () => {
+    console.log('modal')
+    setModal(!modal)
+    console.log(modal)
+    modalToggleRef.current.click();
+
+  }
+
   return (
     <div className="bg-slate-50">
 
@@ -18,7 +29,7 @@ function App() {
             <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
           </div>
           <div className="flex-none">
-            <button className="btn btn-square btn-ghost">
+            <button onClick={() => toggleModal()} className="btn btn-square btn-ghost">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
             </button>
           </div>
@@ -168,7 +179,7 @@ function App() {
 
       {/* CAROUSEL */}
 
-      <div class="w-[40rem] mx-auto px-4 hidden md:block">
+      <div className="w-[40rem] mx-auto px-4 hidden md:block">
 
         <div className="flex justify-center p-10">
 
@@ -309,7 +320,104 @@ function App() {
       </div>
 
 
-    </div>
+
+      { /* MODAL */}
+
+      {/* The button to open modal */}
+      {/* <label htmlFor="my-modal-5" className="btn">open modal</label> */}
+      <input type="checkbox" id="my-modal-5" className="modal-toggle" ref={modalToggleRef} />
+
+
+      <input type="checkbox" id="my-modal-5" className="modal-toggle" ref={modalToggleRef} />
+
+      {/* <div className="modal">
+        <div className="modal-box w-11/12 max-w-5xl">
+          <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+          <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+          <div className="modal-action">
+            <label onClick={() => toggleModal()} htmlFor="my-modal-5" className="btn">Yay!</label>
+          </div>
+        </div> */}
+
+
+      <div className="modal">
+
+
+        <div className="modal-box w-11/12 max-w-5xl" style={{ height: '80vh', overflowY: 'auto' }}>
+
+          {/* <div className="modal-box w-11/12 max-w-5xl rounded-lg rounded-r-lg" style={{ height: '80vh', overflowY: 'auto' }}> */}
+
+
+
+          <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+          <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          <p>More text goes here...</p>
+          {/* Add as many paragraphs as needed */}
+          <div className="modal-action">
+            <label onClick={() => toggleModal()} htmlFor="my-modal-5" className="btn">Yay!</label>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* </div> */}
+
+
+
+
+
+
+
+    </div >
   )
 }
 
